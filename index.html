@@ -1,0 +1,97 @@
+<!DOCTYPE HTML>
+<html lang="ru">
+<head>
+	<title>Shower Presentation Engine</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=792, user-scalable=no">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+  <link rel="stylesheet" href="bower_components/jquery-ui/themes/ui-lightness/jquery-ui.css"/>
+	<link rel="stylesheet" href="shower/themes/ribbon/styles/screen.css">
+  <link rel="stylesheet" href="events.css"/>
+</head>
+<body class="list">
+	<header class="caption">
+		<h1>Shower Presentation Engine</h1>
+		<p>Yours Truly, Famous Inc.</p>
+	</header>
+	<section class="slide cover" id="Cover"><div>
+		<h2>Shower Presentation Engine</h2>
+		<p>Brought to you by <a href="http://pepelsbey.net">Vadim Makeev</a></p>
+		<img src="pictures/cover.jpg" alt="">
+		<!--
+			To apply styles to the certain slides
+			set slide ID to get needed elements
+			-->
+		<style>
+			#Cover h2 {
+				margin:30px 0 0;
+				color:#FFF;
+				text-align:center;
+				font-size:70px;
+				}
+			#Cover p {
+				margin:10px 0 0;
+				text-align:center;
+				color:#FFF;
+				font-style:italic;
+				font-size:20px;
+				}
+				#Cover p a {
+					color:#FFF;
+					}
+		</style>
+	</div></section>
+	<section class="slide"><div>
+		<h2>Shower Key Features</h2>
+		<ol>
+			<li>Built on HTML, CSS and vanilla JavaScript</li>
+			<li>All modern browsers are supported</li>
+			<li>Slide themes are separated from engine</li>
+			<li>Fully keyboard accessible</li>
+			<li>Printable to PDF</li>
+		</ol>
+		<p class="note">Shower ['ʃəuə] noun. A person or thing that shows.</p>
+	</div></section>
+	<section class="slide"><div>
+		<h2>Plain Text on Your Slides</h2>
+		<p>Lorem ipsum dolor sit amet, consectetur <a href="#4">adipisicing</a> elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, <em>quis nostrud</em> exercitation ullamco laboris</p>
+    <script class="ace-embedded" type="ace">
+for(var i=1; i<=5; i++) {
+  $('<button style="position:fixed;left:20px;top:'+i*20+'px">')
+    .html(i)
+    .click(function() { alert(i); })
+    .appendTo(document.body)
+    .delay(5000)
+    .fadeOut();
+}
+      </script>
+
+	</div></section>
+
+	<!--
+		To hide progress bar from entire presentation
+		just remove “progress” element.
+		-->
+	<div class="progress"><div></div></div>
+  <script src="bower_components/jquery/jquery.js"></script>
+  <script src="bower_components/jquery-ui/ui/jquery-ui.js"></script>
+  <script src="bower_components/ace-builds/src-noconflict/ace.js"></script>
+  <script src="ace-init.js"></script>
+
+  <script>
+    console.clear = function() {}; // disable clear
+
+    $(function() {
+
+      $('.slide').each(function() {
+        this.innerHTML = this.innerHTML.replace(/`([\s\S]+)`/gim, '<code>$1</code>');
+      });
+
+      setTimeout(initAceEmbedded, 1000);
+    });
+
+  </script>
+	<script src="shower/shower.js"></script>
+
+</body>
+</html>

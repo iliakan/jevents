@@ -1,0 +1,13 @@
+.wrong {
+  text-decoration: line-through;
+}
+
+.ace-embedded {
+  height: 200px;
+  width: 560px;
+}
+
+
+.highlight {
+  color: yellow;
+}
