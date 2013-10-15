@@ -14,8 +14,7 @@
   function run() {
     setInterval(function() {
       $('<div>', {html: new Array(1000000).join("leak")})
-          .click(function() { /* ... */
-          })
+          .click(function() { /* ... */})
           .appendTo(container);
 
       container.innerHTML = '';

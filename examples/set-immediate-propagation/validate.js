@@ -8,7 +8,7 @@ $.fn.addValidator = function(validate) {
       if (error) {
         label.attr('error', error);
         control.focus();
-        e.stopImmediatePropagation(); // (!!!)
+        e.stopPropagation(); // (!!!)
         e.preventDefault();
       }
     });

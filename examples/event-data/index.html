@@ -12,7 +12,7 @@
   for(var i=1; i<=5; i++) {
     $('<button class="btn btn-primary" style="position:fixed;left:40px;top:'+i*40+'px">')
         .html(i)
-        .click(function() { alert(i); })
+        .click({num: i}, function(e) { alert(e.data.num); })
         .appendTo(document.body)
   }
 
