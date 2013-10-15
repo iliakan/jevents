@@ -56,8 +56,10 @@ var MessagesView = Marionette.Layout.extend({
       this.messageSelected.show(new MessageFullView({
         model: this.collection.selected
       }));
+      app.router.navigate('/messages/' + this.collection.selected.id);
     } else {
       this.messageSelected.close();
+      app.router.navigate('/messages');
     }
   }
 
