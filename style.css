@@ -59,7 +59,7 @@ a.external::after {
 
 #Cover .logo {
   left: calc(50% - 48px);
-  top: 465px;
+  top: 450px;
 }
 
 #Cover h2 {
@@ -78,4 +78,17 @@ a.external::after {
   text-align: center;
   color: black;
   margin: 0;
+}
+
+#Cover .banners {
+  position: absolute;
+  top: 350px;
+  left: 300px;
+  text-align: center;
+}
+
+#Cover .banners img {
+  display: inline;
+  vertical-align: middle;
+  position: static;
 }

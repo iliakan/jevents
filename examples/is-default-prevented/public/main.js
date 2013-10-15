@@ -1,7 +1,6 @@
 
-
-
 var app = new Backbone.Marionette.Application();
+
 app.addInitializer(function(options) {
 
   this.view = new AppView({

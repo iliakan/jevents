@@ -20,7 +20,11 @@
   <h2>Продвинутое использование событий в jQuery</h2>
   <p>Илья Кантор</p>
   <img src="pictures/cover-blank.png" alt="обложка">
-  <img src="pictures/logo.png" class="logo" alt="лого">
+  <div class="banners">
+    <img src="pictures/javascript.png" class="logo" alt="javascript.ru">
+  <img src="pictures/jquery.png" width="200" alt="jquery">
+   <img src="pictures/itmozg.png" width="150" alt="itmozg">
+  </div>
 </div></section>
 <section class="slide">
   <div>
@@ -67,7 +71,6 @@
         <li>Backbone роутинг пропускает через себя ссылки с data-navigate, можно использовать проверку
           isDefaultPrevented(), чтобы отменять роутинг.
         </li>
-        <li>P.S. return false в jQuery = stopPropagation + preventDefault</li>
       </ul>
     </aside>
 
@@ -141,6 +144,21 @@
 
 <section class="slide">
   <div>
+    <h2>События где угодно</h2>
+
+    <ul>
+      <li><code>$(obj).on('select', handler)</code></li>
+      <li><code>$(obj).triggerHandler('select', arg1, arg2, ...)</code></li>
+      <li><code>$(obj).triggerHandler({type: 'select', value: ...})</code></li>
+      <li>Пример <a target="_blank" href="http://plnkr.co/edit/gist:6987142?p=preview" class="external"></a></li>
+    </ul>
+
+  </div>
+</section>
+
+
+<section class="slide">
+  <div>
     <h2>Ещё события</h2>
 
     <ul>
@@ -190,17 +208,6 @@
   </div>
 </section>
 
-<section class="slide">
-  <div>
-    <h2>События где угодно</h2>
-
-    <ul>
-      <li><code>$(obj).on('select', handler)</code></li>
-      <li><code>$(obj).triggerHandler({type: 'select', value: ...})</code></li>
-    </ul>
-
-  </div>
-</section>
 
 <section class="slide">
   <iframe style="width:100%;height:100%" src="questions.html"></iframe>

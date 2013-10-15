@@ -1,0 +1,57 @@
+<mockup version="1.0" skin="sketch" fontFace="Balsamiq Sans" measuredW="895" measuredH="540" mockupW="670" mockupH="530">
+  <controls>
+    <control controlID="0" controlTypeID="com.balsamiq.mockups::BrowserWindow" x="225" y="10" w="670" h="530" measuredW="450" measuredH="400" zOrder="0" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>The%20App%0A/messages/1</text>
+      </controlProperties>
+    </control>
+    <control controlID="1" controlTypeID="com.balsamiq.mockups::FieldSet" x="283" y="105" w="498" h="388" measuredW="200" measuredH="170" zOrder="1" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>AppView</text>
+      </controlProperties>
+    </control>
+    <control controlID="2" controlTypeID="com.balsamiq.mockups::LinkBar" x="298" y="129" w="-1" h="-1" measuredW="113" measuredH="19" zOrder="2" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Home%2C%20Messages</text>
+      </controlProperties>
+    </control>
+    <control controlID="3" controlTypeID="com.balsamiq.mockups::FieldSet" x="299" y="154" w="455" h="318" measuredW="200" measuredH="170" zOrder="3" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>%23main%20%28MessagesView%20/%20FrontPageView%29</text>
+      </controlProperties>
+    </control>
+    <control controlID="4" controlTypeID="com.balsamiq.mockups::FieldSet" x="314" y="170" w="425" h="100" measuredW="200" measuredH="170" zOrder="4" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>MessagesList</text>
+      </controlProperties>
+    </control>
+    <control controlID="5" controlTypeID="com.balsamiq.mockups::FieldSet" x="316" y="277" w="423" h="170" measuredW="200" measuredH="170" zOrder="5" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>MessageFullView</text>
+      </controlProperties>
+    </control>
+    <control controlID="11" controlTypeID="com.balsamiq.mockups::Paragraph" x="329" y="303" w="306" h="80" measuredW="200" measuredH="80" zOrder="6" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>%u041F%u043E%u043B%u043D%u044B%u0439%20%u0442%u0435%u043A%u0441%u0442%20%u0442%u0435%u043A%u0443%u0449%u0435%u0433%u043E%20%u0441%u043E%u043E%u0431%u0449%u0435%u043D%u0438%u044F%20%28%3Aid%20%3D%201%29%0A...%0A...%0A...</text>
+      </controlProperties>
+    </control>
+    <control controlID="12" controlTypeID="com.balsamiq.mockups::Label" x="324" y="189" w="-1" h="-1" measuredW="113" measuredH="21" zOrder="7" locked="false" isInGroup="-1">
+      <controlProperties>
+        <align>center</align>
+        <text>MessageShortView</text>
+      </controlProperties>
+    </control>
+    <control controlID="13" controlTypeID="com.balsamiq.mockups::Label" x="324" y="211" w="-1" h="-1" measuredW="113" measuredH="21" zOrder="8" locked="false" isInGroup="-1">
+      <controlProperties>
+        <align>center</align>
+        <text>MessageShortView</text>
+      </controlProperties>
+    </control>
+    <control controlID="14" controlTypeID="com.balsamiq.mockups::Label" x="324" y="233" w="-1" h="-1" measuredW="113" measuredH="21" zOrder="9" locked="false" isInGroup="-1">
+      <controlProperties>
+        <align>center</align>
+        <text>MessageShortView</text>
+      </controlProperties>
+    </control>
+  </controls>
+</mockup>
