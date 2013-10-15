@@ -2,6 +2,8 @@
   // Original code: https://gist.github.com/desyncr/4640648
   // See: http://learn.jquery.com/events/event-extensions/
 
+  // alternative: http://benalpert.com/2013/06/18/a-near-perfect-oninput-shim-for-ie-8-and-9.html
+  // alternative: https://github.com/facebook/react/blob/master/src/eventPlugins/ChangeEventPlugin.js
   var textchange = $.event.special.textchange = {
 
     setup: function (data, namespaces) {
