@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <script src="//code.jquery.com/jquery-2.0.3.js"></script>
+</head>
+<body>
+
+<button onclick="run()">Запустить утечку</button>
+
+<script>
+  var container = document.createElement('div');
+
+  function run() {
+    setInterval(function() {
+      $('<div>', {html: new Array(1000000).join("leak")})
+          .click(function() { /* ... */
+          })
+          .appendTo(container);
+
+      container.innerHTML = '';
+    }, 1000);
+  }
+</script>
+
+</body>
+</html>

@@ -1,97 +1,232 @@
 <!DOCTYPE HTML>
 <html lang="ru">
 <head>
-	<title>Shower Presentation Engine</title>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=792, user-scalable=no">
-	<meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>Продвинутое использование событий в jQuery</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=792, user-scalable=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
   <link rel="stylesheet" href="bower_components/jquery-ui/themes/ui-lightness/jquery-ui.css"/>
-	<link rel="stylesheet" href="shower/themes/ribbon/styles/screen.css">
-  <link rel="stylesheet" href="events.css"/>
+  <link rel="stylesheet" href="shower/themes/ribbon/styles/screen.css">
+  <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css"/>
 </head>
 <body class="list">
-	<header class="caption">
-		<h1>Shower Presentation Engine</h1>
-		<p>Yours Truly, Famous Inc.</p>
-	</header>
-	<section class="slide cover" id="Cover"><div>
-		<h2>Shower Presentation Engine</h2>
-		<p>Brought to you by <a href="http://pepelsbey.net">Vadim Makeev</a></p>
-		<img src="pictures/cover.jpg" alt="">
-		<!--
-			To apply styles to the certain slides
-			set slide ID to get needed elements
-			-->
-		<style>
-			#Cover h2 {
-				margin:30px 0 0;
-				color:#FFF;
-				text-align:center;
-				font-size:70px;
-				}
-			#Cover p {
-				margin:10px 0 0;
-				text-align:center;
-				color:#FFF;
-				font-style:italic;
-				font-size:20px;
-				}
-				#Cover p a {
-					color:#FFF;
-					}
-		</style>
-	</div></section>
-	<section class="slide"><div>
-		<h2>Shower Key Features</h2>
-		<ol>
-			<li>Built on HTML, CSS and vanilla JavaScript</li>
-			<li>All modern browsers are supported</li>
-			<li>Slide themes are separated from engine</li>
-			<li>Fully keyboard accessible</li>
-			<li>Printable to PDF</li>
-		</ol>
-		<p class="note">Shower ['ʃəuə] noun. A person or thing that shows.</p>
-	</div></section>
-	<section class="slide"><div>
-		<h2>Plain Text on Your Slides</h2>
-		<p>Lorem ipsum dolor sit amet, consectetur <a href="#4">adipisicing</a> elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, <em>quis nostrud</em> exercitation ullamco laboris</p>
-    <script class="ace-embedded" type="ace">
-for(var i=1; i<=5; i++) {
-  $('<button style="position:fixed;left:20px;top:'+i*20+'px">')
-    .html(i)
-    .click(function() { alert(i); })
-    .appendTo(document.body)
-    .delay(5000)
-    .fadeOut();
-}
-      </script>
 
-	</div></section>
+<header class="caption">
+  <h1>Продвинутое использование событий в jQuery</h1>
+  <p>Илья Кантор</p>
+</header>
+<section class="slide cover" id="Cover"><div>
+  <h2>Продвинутое использование событий в jQuery</h2>
+  <p>Илья Кантор</p>
+  <img src="pictures/cover-blank.png" alt="обложка">
+  <img src="pictures/logo.png" class="logo" alt="лого">
+</div></section>
+<section class="slide">
+  <div>
+    <h2>DOM3 Events</h2>
 
-	<!--
-		To hide progress bar from entire presentation
-		just remove “progress” element.
-		-->
-	<div class="progress"><div></div></div>
-  <script src="bower_components/jquery/jquery.js"></script>
-  <script src="bower_components/jquery-ui/ui/jquery-ui.js"></script>
-  <script src="bower_components/ace-builds/src-noconflict/ace.js"></script>
-  <script src="ace-init.js"></script>
+    <ul>
+      <li><a
+          href="http://www.w3.org/TR/2006/WD-DOM-Level-3-Events-20060413/events.html#Events-listeners-registration">Сохранение
+        порядка обработчиков</a></li>
+      <li><a
+          href="http://www.w3.org/TR/2006/WD-DOM-Level-3-Events-20060413/events.html#Events-Event-stopImmediatePropagation">Event.stopImmediatePropagation()</a>
+           <a target="_blank" href="http://plnkr.co/edit/gist:6966252?p=preview" class="external"></a>
+      </li>
+    </ul>
 
-  <script>
-    console.clear = function() {}; // disable clear
+    <aside class="notes">
+      <ul>
+        <li>stopImmediatePropagation - останавливает обработку тут же, другие валидаторы не сработают.
+        </li>
+      </ul>
+    </aside>
 
-    $(function() {
+  </div></section>
 
-      $('.slide').each(function() {
-        this.innerHTML = this.innerHTML.replace(/`([\s\S]+)`/gim, '<code>$1</code>');
+
+<section class="slide"><div>
+    <h2>DOM3 Events</h2>
+    <ul>
+      <li><a class="strike"
+          href="http://www.w3.org/TR/2003/WD-DOM-Level-3-Events-20030331/events.html#Events-Event-isDefaultPrevented">return false</a> :(
+        <a target="_blank" href="http://plnkr.co/edit/gist:6977396?p=preview" class="external"></a>
+      </li>
+      <li><a
+          href="http://www.w3.org/TR/2003/WD-DOM-Level-3-Events-20030331/events.html#Events-Event-isDefaultPrevented">Event.isPropagationStopped()</a>
+      </li>
+      <li><a
+          href="http://www.w3.org/TR/2003/WD-DOM-Level-3-Events-20030331/events.html#Events-Event-isDefaultPrevented">Event.isDefaultPrevented()</a>
+        <a target="_blank" href="http://localhost:8001/" class="external"></a>
+      </li>
+
+    </ul>
+    <aside class="notes">
+      <ul>
+        <li>Backbone роутинг пропускает через себя ссылки с data-navigate, можно использовать проверку
+          isDefaultPrevented(), чтобы отменять роутинг.
+        </li>
+        <li>P.S. return false в jQuery = stopPropagation + preventDefault</li>
+      </ul>
+    </aside>
+
+  </div></section>
+
+<section class="slide">
+  <div>
+    <h2>И даже больше...</h2>
+
+    <ul>
+      <li>Привязка данных к <code>event.data</code> <a target="_blank" href="http://plnkr.co/edit/gist:6981354?p=preview" class="external"></a></li>
+      <li class="next">Событие имеет результат <a target="_blank" href="http://plnkr.co/edit/gist:6981541?p=preview" class="external"></a></li>
+      <li class="next">Пространства имён для плагинов <a target="_blank" href="http://plnkr.co/edit/gist:6981594?p=preview" class="external"></a></li>
+    </ul>
+
+
+  </div>
+</section>
+
+
+<section class="slide">
+  <div>
+    <h2>Утечки памяти</h2>
+
+    <iframe class="plunk fill-to-end" src="http://embed.plnkr.co/dHUXbW/preview"></iframe>
+
+  </div>
+</section>
+
+<section class="slide">
+  <div>
+    <h2>Побочные эффекты</h2>
+
+    <ul>
+      <li><a href="http://api.jquery.com/remove/">remove</a>
+        <a href="http://api.jquery.com/html/">html</a>
+        <a href="http://api.jquery.com/empty/">empty</a> &ndash; медленно
+        <img src="pictures/slow.png" width="30">
+      </li>
+    </ul>
+
+  </div>
+</section>
+<section class="slide">
+  <div>
+    <h2>Побочные эффекты</h2>
+
+    <ul>
+      <li>Хотим быстро? <a href="http://api.jquery.com/empty/">detach!</a>
+        <ul>
+          <li>Можно очистить элемент позже</li>
+          <li>…или не очищать вообще</li>
+        </ul>
+      </li>
+    </ul>
+
+  </div>
+</section>
+<section class="slide">
+  <div>
+    <h2>Побочные эффекты</h2>
+
+    <ul>
+      <li><a href="http://api.jquery.com/clone/">clone(true, true)</a> &ndash; с событиями и <code>data</code></li>
+    </ul>
+
+
+  </div>
+</section>
+
+
+<section class="slide">
+  <div>
+    <h2>Ещё события</h2>
+
+    <ul>
+      <li>
+        <a href="http://www.w3.org/TR/DOM-Level-3-Events/#event-type-focusIn">focusin</a> /
+        <a href="http://www.w3.org/TR/DOM-Level-3-Events/#event-type-focusout">focusout</a>
+        <ul>
+          <li>Делегирование на формах</li>
+          <li>Закрытие контролов  <a target="_blank" href="http://plnkr.co/edit/gist:6980402?p=preview" class="external"></a></li>
+        </ul>
+      </li>
+    </ul>
+
+
+  </div>
+</section>
+
+<section class="slide">
+  <div>
+    <h2>...Ещё события</h2>
+
+    <ul>
+      <li>
+        <a href="http://www.w3.org/TR/DOM-Level-3-Events/#event-type-mouseenter">mouseenter</a> /
+        <a href="http://www.w3.org/TR/DOM-Level-3-Events/#event-type-mouseleave">mouseleave</a>
+        <ul>
+          <li>"Правильный" <code>mouseover/mouseout</code></li>
+          <li><code>hover(mouseenter, mouseleave)</code></li>
+          <li>Не всплывают :(</li>
+        </ul>
+      </li>
+    </ul>
+
+  </div>
+</section>
+
+<section class="slide">
+  <div>
+    <h2>Свои события!</h2>
+
+    <ul>
+      <li><code>textchange</code> <a target="_blank" href="http://plnkr.co/edit/gist:6982341?p=preview" class="external"></a></li>
+      <li><code>multiclick</code> <a target="_blank" href="http://plnkr.co/edit/gist:6982344?p=preview" class="external"></a></li>
+      <li>а также жесты...</li>
+    </ul>
+
+  </div>
+</section>
+
+<section class="slide">
+  <div>
+    <h2>События где угодно</h2>
+
+    <ul>
+      <li><code>$(obj).on('select', handler)</code></li>
+      <li><code>$(obj).triggerHandler({type: 'select', value: ...})</code></li>
+    </ul>
+
+  </div>
+</section>
+
+<section class="slide">
+  <iframe style="width:100%;height:100%" src="questions.html"></iframe>
+</section>
+
+
+<div class="progress"><div></div></div>
+
+<script src="bower_components/jquery/jquery.js"></script>
+<script src="bower_components/jquery-ui/ui/jquery-ui.js"></script>
+
+<script>
+  $(window).on('popstate', function() {
+    setTimeout(function() {
+      // fit iframe to page end
+      $('iframe.plunk.fill-to-end').each(function() {
+        var top = this.getBoundingClientRect().top;
+        var bottom = $(this).closest('section').get(0).getBoundingClientRect().bottom;
+        this.style.height = bottom - top - 10 + 'px';
       });
+    }, 200);
 
-      setTimeout(initAceEmbedded, 1000);
-    });
+  });
+</script>
 
-  </script>
-	<script src="shower/shower.js"></script>
+<script src="shower/shower.js"></script>
 
 </body>
 </html>

@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <script src="//code.jquery.com/jquery-latest.js"></script>
+  <script src="textchange.js"></script>
+</head>
+<body>
+
+<input type="text">
+<script>
+
+$('input').on('textchange', function(e, value) {
+  console.log("change %s -> %s", value, this.value);
+})
+</script>
+
+</body>
+</html>

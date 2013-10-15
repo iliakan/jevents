@@ -1,0 +1,16 @@
+label[error] input {
+  outline: 1px solid red;
+}
+
+label[error]::after {
+  content: attr(error);
+  color: red;
+  margin-left: 6px;
+  line-height: 1;
+}
+label {
+  display: block;
+  margin: 0;
+  padding: 0;
+  line-height: 1;
+}

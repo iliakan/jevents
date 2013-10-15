@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <script src="//code.jquery.com/jquery-2.0.3.js"></script>
+</head>
+<body>
+
+<h2>Click me</h2>
+
+<script>
+  $('h2').click(function(e) {
+    return 123;
+  });
+
+  $('h2').click(function(e) {
+    alert(e.result); // 123
+  });
+</script>
+
+</body>
+</html>

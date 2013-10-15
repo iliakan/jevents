@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="style.css" />
+    <script src="//code.jquery.com/jquery-2.0.3.js"></script>
+  </head>
+
+  <body>
+    
+    <form id="user-form">
+      <label><input type="text" validate="username required" placeholder="Имя"/></label>
+      <label><input type="text" validate="email required" placeholder="E-mail"></label>
+      <label><input type="submit" value="Готово »»"></label>
+    </form>
+    
+    <script src="validate.js"></script>
+
+    <script>
+      $('#user-form').submit(function() {
+        alert("Submit successful!");
+        return false;
+      });
+    </script>
+  </body>
+
+</html>

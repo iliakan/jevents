@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.css" rel="stylesheet">
+  <script src="//code.jquery.com/jquery-2.0.3.js"></script>
+</head>
+<body>
+
+<script>
+
+  for(var i=1; i<=5; i++) {
+    $('<button class="btn btn-primary" style="position:fixed;left:40px;top:'+i*40+'px">')
+        .html(i)
+        .click(function() { alert(i); })
+        .appendTo(document.body)
+  }
+
+</script>
+
+</body>
+</html>

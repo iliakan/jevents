@@ -254,6 +254,7 @@ window.shower = window.shower || (function(window, document, undefined) {
 	* @returns {Boolean}
 	*/
 	shower._applyTransform = function(transform) {
+    if (window.DISABLE_SCALING) return;
 		[
 			'WebkitTransform',
 			'MozTransform',
@@ -725,7 +726,7 @@ window.shower = window.shower || (function(window, document, undefined) {
 	*/
 	shower.clearPresenterNotes = function() {
 		if (shower.isSlideMode() && window.console && window.console.clear) {
-			console.clear();
+		//	console.clear();
 		}
 	};
 
@@ -753,7 +754,7 @@ window.shower = window.shower || (function(window, document, undefined) {
 
 				if (next) {
 					next = next.innerHTML.replace(/^\s+|<[^>]+>/g,'');
-					console.info('NEXT: ' + next);
+					// console.info('NEXT: ' + next);
 				}
 			}
 		}
@@ -853,8 +854,6 @@ window.shower = window.shower || (function(window, document, undefined) {
 			case 33: // PgUp
 			case 38: // Up
 			case 37: // Left
-			case 72: // H
-			case 75: // K
 				if (e.altKey || e.ctrlKey || e.metaKey) { return; }
 				e.preventDefault();
 				shower._turnPreviousSlide();
@@ -863,8 +862,6 @@ window.shower = window.shower || (function(window, document, undefined) {
 			case 34: // PgDown
 			case 40: // Down
 			case 39: // Right
-			case 76: // L
-			case 74: // J
 				if (e.altKey || e.ctrlKey || e.metaKey) { return; }
 				e.preventDefault();
 				shower._turnNextSlide();

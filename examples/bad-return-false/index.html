@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <script src="http://code.jquery.com/jquery-2.0.3.js"></script>
+</head>
+<body>
+
+<input id="number">
+
+<script>
+  $('#number').keydown(function(e) {
+    if ( ~$.inArray(event.keyCode,[46,8,9,27,13,37,38,39,40]) ) {
+      // allow backspace, delete, tab, escape, enter ← → ↑ ↓
+      return;
+    }
+
+    if (! (e.keyCode >= 48 && e.keyCode <= 57) ) {
+      return false; // (!!!)
+    }
+  });
+
+  // This handler will never work
+  $(document).keydown(function(e) {
+    if (e.keyCode == "R".charCodeAt(0)) {
+      alert("Hotkey R");
+    }
+  });
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <script src="//code.jquery.com/jquery-latest.js"></script>
+  <script src="multiclick.js"></script>
+</head>
+<body>
+
+<button>Click me 3 times!</button>
+
+<script>
+  $("button").on( "multiclick", { clicks: 3, timeout: 500 }, function(event) {
+    alert("clicked 3 times");
+  });
+</script>
+
+</body>
+</html>

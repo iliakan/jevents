@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <script src="//code.jquery.com/jquery-2.0.3.js"></script>
+</head>
+<body>
+
+<script>
+  $('#slider').on('mousedown', function() {
+
+    $(document).on('mousemove', function(e) {
+      console.log(e.clientX, e.clientY);
+    });
+
+    $(this).mouseup(function() {
+      $(document).off('mousemove'); // а если есть ещё обработчики?
+    });
+  });
+</script>
+
+<input type="range" id="slider">
+
+</body>
+</html>

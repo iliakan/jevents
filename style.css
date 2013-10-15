@@ -1,0 +1,81 @@
+
+
+@font-face {
+  font-family: "PT Sans Caption";
+  font-weight: normal;
+  src: local("PT Sans Caption"), url("fonts/PTC55F_W.woff") format("woff");
+}
+
+@font-face {
+  font-family: "PT Sans Caption";
+  font-weight: bold;
+  src: local("PT Sans Caption Bold"), url("fonts/PTC75F_W.woff") format("woff");
+}
+
+.strike {
+  text-decoration: line-through;
+}
+
+.wrong {
+  color: red;
+}
+
+.ace-embedded {
+  height: 200px;
+  width: 560px;
+}
+
+.highlight {
+  color: yellow;
+}
+
+aside.notes {
+  display: none;
+}
+
+.slide ol, .slide ul {
+  margin: 0 0 20px;
+}
+
+input {
+  font-size: 100%;
+}
+
+.plunk {
+  width: 600px;
+}
+
+.list .ace_line, .list .ace_gutter-cell {
+  height: 16px !important;
+}
+
+a.external::after {
+  content: "\f08e";
+  font-family: FontAwesome;
+  font-weight: normal;
+  font-style: normal;
+  text-decoration: inherit;
+}
+
+#Cover .logo {
+  left: calc(50% - 48px);
+  top: 465px;
+}
+
+#Cover h2 {
+  font-family: "PT Sans Narrow";
+  font-weight: bold;
+  font-size: 60px;
+  text-align: center;
+  top: 300px;
+  color: black;
+  margin: 20px 0;
+}
+
+#Cover p {
+  font-family: "PT Sans Caption";
+  font-size: 24px;
+  text-align: center;
+  color: black;
+  margin: 0;
+}
